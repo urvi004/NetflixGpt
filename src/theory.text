@@ -1,2 +1,4 @@
 npm install -D tailwindcss
 npx tailwindcss init
+
+useRef provide refrence to the input box
