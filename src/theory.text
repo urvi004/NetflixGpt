@@ -2,3 +2,11 @@ npm install -D tailwindcss
 npx tailwindcss init
 
 useRef provide refrence to the input box
+we arre using firebase for authentication
+
+
+steps for Deployment
+0.install firebase cli - 'npm install -g firebase-tools'
+1.firebase login - 'firebase login'
+2.initialize firebase - 'firebase init'
+3. Deploy command - 'firebase deploy'

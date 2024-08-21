@@ -4,6 +4,12 @@
 - Configured TailwindCSS
 - Header
 - login form
+- sign up form
+- form Validation
+- useRef Hook
+-  Firebase Settings
+- Deployed app to production
+- create signUP user account
 
 
 # Features 
