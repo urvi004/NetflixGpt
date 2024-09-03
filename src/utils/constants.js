@@ -1,0 +1,1 @@
+export const USER_AVATAR = "https://img.freepik.com/premium-vector/digital-painting-girl-anime-style-vector-illustration_147933-3842.jpg"

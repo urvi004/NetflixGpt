@@ -8,15 +8,14 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import bgImage from "../Assets/background.jpg";
+import {USER_AVATAR} from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
-  const navigate = useNavigate();
   const userName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -39,13 +38,11 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: userName.current.value,
-            photoURL:
-              "https://img.freepik.com/premium-vector/digital-painting-girl-anime-style-vector-illustration_147933-3842.jpg",
+            photoURL:USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName, photoURL }));
-              navigate("/browser");
             })
             .catch((error) => {
               setErrorMsg(error.message);
@@ -74,7 +71,6 @@ const Login = () => {
           const errorMessage = error.message;
           setErrorMsg(errorMessage + "-" + errorCode);
         });
-      navigate("/browser");
     }
     // console.log(userName.current.value)
   };

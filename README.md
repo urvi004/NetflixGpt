@@ -12,6 +12,12 @@
 - create signUP user account
 - implement sign in user API
 - created redux store with uresSlice
+- Implemented SignOut
+- Updated Profile
+- Bugfix: sign up user displayName and profile picture update
+- Bugfix: if the user is not loggedin Redirect/ blrowse to Login page and vice-versa
+- Unsubscribe to the onAuthStateChange callback
+- Add Hard coded values to the constants.js
 
 
 
