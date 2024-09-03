@@ -1,8 +1,21 @@
 npm install -D tailwindcss
 npx tailwindcss init
 
-useRef provide refrence to the input box
-we arre using firebase for authentication
+#useRef hook
+ const email = useRef(null);
+ <input ref={email} type="email" placeholder="enter your email">
+ email.current => give the refrence to the input box
+ email.current.value => give the value written inside the box
+
+ useRef provide refrence to the input box
+ we are using firebase for authentication
+
+#use formik for form validation
+
+
+#authentication - we used firebase for authentication as backend
+
+
 
 
 steps for Deployment
@@ -10,3 +23,8 @@ steps for Deployment
 1.firebase login - 'firebase login'
 2.initialize firebase - 'firebase init'
 3. Deploy command - 'firebase deploy'
+
+Redux
+npm install @reduxjs/toolkit
+npm install react-redux
+

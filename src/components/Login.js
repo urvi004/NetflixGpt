@@ -6,15 +6,21 @@ import { auth } from "../utils/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 import bgImage from "../Assets/background.jpg";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
-  // const userName = useRef(null)
+  const navigate = useNavigate();
+  const userName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+  const dispatch = useDispatch();
 
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value);
@@ -31,6 +37,19 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: userName.current.value,
+            photoURL:
+              "https://img.freepik.com/premium-vector/digital-painting-girl-anime-style-vector-illustration_147933-3842.jpg",
+          })
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(addUser({ uid, email, displayName, photoURL }));
+              navigate("/browser");
+            })
+            .catch((error) => {
+              setErrorMsg(error.message);
+            });
           console.log(user);
         })
         .catch((error) => {
@@ -40,7 +59,11 @@ const Login = () => {
         });
     } else {
       //  sign in logic
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
@@ -51,6 +74,7 @@ const Login = () => {
           const errorMessage = error.message;
           setErrorMsg(errorMessage + "-" + errorCode);
         });
+      navigate("/browser");
     }
     // console.log(userName.current.value)
   };
@@ -75,7 +99,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
-            // ref={userName}
+            ref={userName}
             type="text"
             placeholder="Name"
             className="p-3 bg-gray-900 border border-gray-300 rounded-md"
@@ -101,7 +125,7 @@ const Login = () => {
         >
           {isSignInForm ? "Sign In" : "Sign UP"}
         </button>
-        <p onClick={() => toggleSignInForm()}>
+        <p onClick={() => toggleSignInForm()} className="cursor-pointer">
           {isSignInForm
             ? "New to Netflix? Sign Up now"
             : "Already a member? Sign In "}

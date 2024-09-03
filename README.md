@@ -10,6 +10,9 @@
 -  Firebase Settings
 - Deployed app to production
 - create signUP user account
+- implement sign in user API
+- created redux store with uresSlice
+
 
 
 # Features 
