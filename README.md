@@ -1,3 +1,5 @@
+netflixgpt-13689.web.app
+
 # Netflix GPT
 
 - Create React App
@@ -18,6 +20,17 @@
 - Bugfix: if the user is not loggedin Redirect/ blrowse to Login page and vice-versa
 - Unsubscribe to the onAuthStateChange callback
 - Add Hard coded values to the constants.js
+- REgister TMDB api create an app and get acess token 
+- get data from TMDB now playing movie list API
+- Custom hook for Now Playing Movies
+- create movieSlice
+- UpdateStore with movieData
+- Planning for mainCointainer and Secondery container
+- fetch Data for movie Trailer
+- Update store with trailer videodata
+- embaded the youtube video and make it autoplay and mute
+- TailwindClasses to make main cointainer look awesome
+
 
 
 
