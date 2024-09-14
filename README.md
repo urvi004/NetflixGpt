@@ -30,6 +30,12 @@ netflixgpt-13689.web.app
 - Update store with trailer videodata
 - embaded the youtube video and make it autoplay and mute
 - TailwindClasses to make main cointainer look awesome
+- Build on Sedondery Components
+- Build Movie List
+- Build Movie Card
+- TMDB Image CDN URL
+- Made the browse page amazing with tailwind css
+- usePopularMovie custom hook
 
 
 

@@ -23,7 +23,7 @@ const useTrailerVideo = (movieId) => {
     dispatch(addTrailerVideo(trailer));
 
     // setMovieTrailer(trailer);
-    console.log(trailer);
+    console.log(trailer, filterData,"trailer Info");
   };
 
   useEffect(() => {

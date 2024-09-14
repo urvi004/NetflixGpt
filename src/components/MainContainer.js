@@ -4,13 +4,14 @@ import VideoBackground from './VideoBackground'
 import VideoTitle from './VideoTitle'
 
 const MainContainer = () => {
-  const movie = useSelector((store)=>store.movies?.nowPlayingMovies)
+  const movie = useSelector((store)=>store.movies?.popularMovies)
   if(!movie) return
-  const mainMovie = movie[2]
-  console.log(mainMovie)
+  const random = Math.floor(Math.random() * movie.length-1) 
+  const mainMovie = movie[random]
+  // console.log(mainMovie, random , mainMovie.original_title,"num")
 
   const {original_title, overview, id} = mainMovie
-//   console.log(original_title)
+
 
   return (
     <div>
