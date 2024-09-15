@@ -36,6 +36,9 @@ netflixgpt-13689.web.app
 - TMDB Image CDN URL
 - Made the browse page amazing with tailwind css
 - usePopularMovie custom hook
+- GPT Search Page
+- GPT Search Bar
+- (BONUS) Multi-Lingual Feature in our Appp
 
 
 
